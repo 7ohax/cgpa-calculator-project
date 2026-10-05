@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaler CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SCALER <span>CGPA CALCULATOR</span></div>
+        <nav class="nav_bar">
+            <a href="#home">HOME</a>
+            <a href="#subjects">SUBJECTS</a>
+            <a href="#about">ABOUT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro" id="home">
+            <p class="tagline">LEARN • TRACK • GROW</p>
+            <h1>Scaler CGPA Calculator</h1>
+            <p>Enter your subjects, grades and credits to calculate your CGPA.</p>
+        </section>
+
+        <section class="calculator_box">
+            <h2>ADD A SUBJECT</h2>
+
+            <div class="input_box">
+                <label for="subject_name">Subject Name</label>
+                <input type="text" id="subject_name" placeholder="Enter subject name" maxlength="50">
+            </div>
+
+            <div class="input_box">
+                <label for="grade">Grade</label>
+                <select id="grade">
+                    <option value="">Select Grade</option>
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">F</option>
+                </select>
+            </div>
+
+            <div class="input_box">
+                <label for="credits">Credits</label>
+                <input type="number" id="credits" min="1" max="10" step="1" placeholder="1 - 10">
+            </div>
+
+            <button onclick="addSubject()">ADD SUBJECT</button>
+            <p id="message"></p>
+        </section>
+
+        <section class="subjects_box" id="subjects">
+            <h2>MY SUBJECTS</h2>
+
+            <div class="table_box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Credits</th>
+                            <th>Grade x Credits</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subject_list"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="result_box">
+            <h2>YOUR CGPA</h2>
+            <div class="cgpa" id="cgpa">0.00</div>
+            <p>Total Credits: <span id="total_credits">0</span></p>
+        </section>
+
+        <section class="about_box" id="about">
+            <h2>ABOUT</h2>
+            <p>Add each subject with its grade and credits. Your CGPA is calculated as the weighted average of your grade points. Your subject list is saved in this browser.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Scaler CGPA Calculator · Student Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
